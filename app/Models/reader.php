@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class reader extends Model
 {
     use HasFactory;
+
+    public function book(){
+        return $this->hasOne(book::class);
+    }
 }
