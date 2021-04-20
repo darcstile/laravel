@@ -22,7 +22,10 @@ class ReaderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'date_reg' => $this -> faker ->date(),
+            'FIO' => $this -> faker ->name(10),
+            'date_birth' => $this -> faker ->date(),
+
         ];
     }
 }

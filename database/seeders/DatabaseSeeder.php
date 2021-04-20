@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Reader;
+use App\Models\Shelf;
+use App\Models\Book;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,5 +19,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        Reader::factory(5)->create();
+        Shelf::factory(5)->create();
     }
 }

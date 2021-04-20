@@ -22,7 +22,7 @@ class ShelfFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'shelf' => $this -> faker ->text(10)
         ];
     }
 }
