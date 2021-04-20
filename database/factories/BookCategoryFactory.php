@@ -23,7 +23,7 @@ class BookCategoryFactory extends Factory
     {
         return [
             'Category_id' =>$this->faker->numberBetween(1,5),
-            'Book_id' =>$this->faker->numberBetween(1,5)
+            'Book_id' =>$this->faker->unique()->numberBetween(1,5)
         ];
     }
 }
