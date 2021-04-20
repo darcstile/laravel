@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         //Reader::factory(5)->create();
         //Shelf::factory(5)->create();
-       // Category::factory(5)->create();
-       // Tag::factory(5)->create();
-        CategoryBook::factory(5)->create();
-        TagBook::factory(5)->create();
+        //Category::factory(5)->create();
+        //Tag::factory(5)->create();
+        //CategoryBook::factory(5)->create();
+        //TagBook::factory(5)->create();
     }
 }
