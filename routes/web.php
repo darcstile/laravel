@@ -21,18 +21,21 @@ Route::get('/', 'App\Http\Controllers\MainController@index');
 
 
 //
-//$books = \App\Models\Book::all();
-//$categories = \App\Models\Category::all();
-//foreach ($books as $book){
-//    echo '<b>Book</b>:<br>' .$book['name'].'<br>';
-//    echo '<b>Category:</b><br>';
-//    foreach ($book->categories as $category){
-//        echo $category['category'].'<br>';
-//
-//    }
-//    echo '--------------------------<br>';
-//}
+$books = \App\Models\Book::all();
+$categories = \App\Models\Category::all();
+foreach ($books as $book){
+    echo '<b>Book</b>:<br>' .$book['name'].'<br>';
+    echo '<b>Category:</b><br>';
+    foreach ($book->categories as $category){
+        echo $category['category'].'<br>';
 
+    }
+    echo '--------------------------<br>';
+}
+echo '--------------------------<br>';
+echo '--------------------------<br>';
+echo '--------------------------<br>';
+echo '--------------------------<br>';
 $books = \App\Models\Book::all();
 foreach ($books as $book){
     echo '<b>Book</b>:<br>'.$book['name'].'<br>';
