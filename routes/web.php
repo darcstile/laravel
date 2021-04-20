@@ -13,39 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $test = 'Hi';
-    return view('home', compact('test'));
-});
+Route::get('/', 'App\Http\Controllers\MainController@index');
 
-Route::get('/about', function () {
-    return view('home');
-});
+//Route::get('/about', function () {
+//    return view('home');
+//});
 
-//$categories = \App\Models\Category\all();
+
+//
 //$books = \App\Models\Book::all();
+//$categories = \App\Models\Category::all();
 //foreach ($books as $book){
-//    echo 'Book:' .$book['name'].'<br>';
+//    echo '<b>Book</b>:<br>' .$book['name'].'<br>';
 //    echo '<b>Category:</b><br>';
-//    foreach ($book->category as $category){
+//    foreach ($book->categories as $category){
 //        echo $category['category'].'<br>';
+//
 //    }
+//    echo '--------------------------<br>';
 //}
-$books = \App\Models\Book::all();
-$categories = \App\Models\Category::all();
-foreach ($books as $book){
-    echo '<b>Book</b>:<br>' .$book['name'].'<br>';
-    echo '<b>Category:</b><br>';
-    foreach ($book->categories as $category){
-        echo $category['category'].'<br>';
 
-    }
-    echo '--------------------------<br>';
+$books = \App\Models\Book::all();
+foreach ($books as $book){
+    echo '<b>Book</b>:<br>'.$book['name'].'<br>';
+    echo '<b>shelf:</b><br>';
+    echo $book->shelves['shelf'];
 }
-//foreach ($categories as $category){
-//    echo 'category:' .$category['category'].'<br>';
-//    echo '<b>Category:</b><br>';
-//    foreach ($category->books as $book){
-//        echo $book['name'].'<br>';
-//    }
-//}

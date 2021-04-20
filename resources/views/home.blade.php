@@ -1,79 +1,43 @@
 @extends('layout')
 
 @section('content')
+@if(count($books))
 <div class="table-responsive">
 					<table class="table table-hover table-striped">
 						<thead>
 							<tr>
 								<th scope="col">#</th>
-								<th scope="col">Name</th>
-								<th scope="col">Email</th>
-								<th scope="col">Phone</th>
+								<th scope="col">Фото</th>
+								<th scope="col">Имя</th>
+								<th scope="col">Категория</th>
+								<th scope="col">Метка или тег</th>
+								<th scope="col">Полка</th>
+								<th scope="col">Читатель</th>
 							</tr>
 						</thead>
 						<tbody>
+                        @foreach($books as $book)
 							<tr>
-								<th scope="row">1</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
+								<th scope="row">{{$book->id}}</th>
+								<td>{{$book->picture}}</td>
+								<td>{{$book->name }}</td>
+                                <td> @foreach ($book->categories as $category)
+                                        {{ $category->category }}
+                                    @endforeach</td>
+								<td>@foreach ($book->tags as $tag)
+                                        {{ $tag->tag }}
+                                    @endforeach</td>
+								<td>{{$book->shelf_id}}</td>
+								<td>{{$book->reader_id}}</td>
 							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
-							<tr>
-								<th scope="row">4</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
-							<tr>
-								<th scope="row">5</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
-							<tr>
-								<th scope="row">6</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
-							<tr>
-								<th scope="row">7</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
-							<tr>
-								<th scope="row">8</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
-							<tr>
-								<th scope="row">9</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
-							<tr>
-								<th scope="row">10</th>
-								<td>John Doe</td>
-								<td>john@mail.com</td>
-								<td>555 555-55-55</td>
-							</tr>
+                        @endforeach
+
+
 						</tbody>
 					</table>
 
 				</div><!-- ./table-responsive-->
+    @endif
 @endsection
+
+
