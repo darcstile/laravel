@@ -8,6 +8,8 @@ use App\Models\Shelf;
 use App\Models\Book;
 use App\Models\Category;
 use App\Models\Tag;
+use App\Models\CategoryBook;
+use App\Models\TagBook;
 
 
 
@@ -25,5 +27,7 @@ class DatabaseSeeder extends Seeder
         //Shelf::factory(5)->create();
        // Category::factory(5)->create();
        // Tag::factory(5)->create();
+        CategoryBook::factory(5)->create();
+        TagBook::factory(5)->create();
     }
 }
