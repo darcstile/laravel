@@ -19,7 +19,7 @@
                         @foreach($books as $book)
 							<tr>
 								<th scope="row">{{$book->id}}</th>
-								<td>{{$book->picture}}</td>
+								<td><img src="../public/img/{{$book->picture}}." style="width: 50px;"></td>
 								<td>{{$book->name }}</td>
                                 <td> @foreach ($book->categories as $category)
                                         {{ $category->category }}

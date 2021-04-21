@@ -20,14 +20,14 @@
 			<div class="col-md-12">
 
 				<form>
-					<div class="form-row">
-						<div class="form-group col-md-10">
-							<input type="text" class="form-control" id="q" name="q" placeholder="Search...">
-						</div>
-						<div class="form-group col-md-2">
-							<button type="submit" class="btn btn-primary btn-block">Search</button>
-						</div>
-					</div>
+{{--					<div class="form-row">--}}
+{{--						<div class="form-group col-md-10">--}}
+{{--							<input type="text" class="form-control" id="q" name="q" placeholder="Search...">--}}
+{{--						</div>--}}
+{{--						<div class="form-group col-md-2">--}}
+{{--							<button type="submit" class="btn btn-primary btn-block">Search</button>--}}
+{{--						</div>--}}
+{{--					</div>--}}
 
 				</form>
 
