@@ -27,8 +27,8 @@
 								<td>@foreach ($book->tags as $tag)
                                         {{ $tag->tag }}
                                     @endforeach</td>
-								<td>{{$book->shelf_id}}</td>
-								<td>{{$book->reader_id}}</td>
+								<td>{{$book->shelf['shelf']}}</td>
+								<td>{{$book->reader['FIO']}}</td>
 							</tr>
                         @endforeach
 

@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class shelf extends Model
 {
+
     use HasFactory;
 
-    public function book(){
+    public function books(){
         return $this->hasOne(book::class);
     }
 }
