@@ -13,6 +13,7 @@
 								<th scope="col">Метка или тег</th>
 								<th scope="col">Полка</th>
 								<th scope="col">Читатель</th>
+								<th scope="col">Дата взятия книги</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -29,6 +30,7 @@
                                     @endforeach</td>
 								<td>{{$book->shelf['name']}}</td>
 								<td>{{$book->reader['FIO']}}</td>
+								<td>{{$book->date_take}}</td>
 							</tr>
                         @endforeach
 
