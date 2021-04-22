@@ -22,12 +22,12 @@
 								<td><img src="../public/img/{{$book->picture}}." style="width: 50px;"></td>
 								<td>{{$book->name }}</td>
                                 <td> @foreach ($book->categories as $category)
-                                        {{ $category->category }}
+                                        {{ $category->name }}
                                     @endforeach</td>
 								<td>@foreach ($book->tags as $tag)
-                                        {{ $tag->tag }}
+                                        {{ $tag->name }}
                                     @endforeach</td>
-								<td>{{$book->shelf['shelf']}}</td>
+								<td>{{$book->shelf['name']}}</td>
 								<td>{{$book->reader['FIO']}}</td>
 							</tr>
                         @endforeach

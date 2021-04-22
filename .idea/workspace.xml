@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Написание вывода из бд в табличку bootstrap">
+    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Вывод изображений из базы">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +133,10 @@
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1rQ3FACeO3lFW61BurqFOPKxIHL" />
@@ -171,7 +175,9 @@
       <workItem from="1618911725980" duration="6406000" />
       <workItem from="1618924267557" duration="1000" />
       <workItem from="1618924481107" duration="3750000" />
-      <workItem from="1619006942563" duration="5103000" />
+      <workItem from="1619006942563" duration="6640000" />
+      <workItem from="1619016574288" duration="219000" />
+      <workItem from="1619088351801" duration="2929000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -264,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619013084714</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Вывод изображений из базы">
+      <created>1619015032309</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1619015032309</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +304,7 @@
     <MESSAGE value="Тестовый вывод" />
     <MESSAGE value="Написание main контроллера" />
     <MESSAGE value="Написание вывода из бд в табличку bootstrap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Написание вывода из бд в табличку bootstrap" />
+    <MESSAGE value="Вывод изображений из базы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Вывод изображений из базы" />
   </component>
 </project>
