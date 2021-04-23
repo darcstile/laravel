@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/books', 'App\Http\Controllers\MainController@index');
-Route::get('/books/create', 'App\Http\Controllers\MainController@create');
-Route::post('/books/edit', 'App\Http\Controllers\MainController@edit');
+    Route::resource('books', 'App\Http\Controllers\library\PostController');
+
+//Route::get('books/create', 'App\Http\Controllers\MainController@create');
+//Route::post('books/edit', 'App\Http\Controllers\MainController@edit');
 
 //Route::get('/about', function () {
 //    return view('home');

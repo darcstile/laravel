@@ -9,6 +9,7 @@
 								<th scope="col">#</th>
 								<th scope="col">Фото</th>
 								<th scope="col">Имя</th>
+								<th scope="col">Автор</th>
 								<th scope="col">Категория</th>
 								<th scope="col">Метка или тег</th>
 								<th scope="col">Полка</th>
@@ -17,11 +18,13 @@
 							</tr>
 						</thead>
 						<tbody>
+                        @php /** @var \App\Models\Book $item */  @endphp
                         @foreach($books as $book)
 							<tr>
 								<th scope="row">{{$book->id}}</th>
-								<td><img src="../public/img/{{$book->picture}}." style="width: 50px;"></td>
-								<td><a href="books/edit/{{$book->id}}">{{$book->name }}</a></td>
+								<td><img src="../public/img/{{$book->picture}}" style="width: 50px;"></td>
+								<td><a href="{{route('books.edit', $book->id) }}">{{$book->name }}</a></td>
+								<td>{{$book->author}}</a></td>
                                 <td> @foreach ($book->categories as $category)
                                         {{ $category->name }}
                                     @endforeach</td>

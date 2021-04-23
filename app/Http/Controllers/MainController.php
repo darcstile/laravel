@@ -24,7 +24,8 @@ class MainController extends Controller
     }
     public function edit($id)
     {
-        $books=Book::all();
-        return view('book',compact('books'));
+        $item = Book::findOrFail($id);
+        $itemList = Book::all();
+        return view('book',compact('item', 'itemList'));
     }
 }

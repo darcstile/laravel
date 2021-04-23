@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Работа с формой создания новой книги">
-      <change afterPath="$PROJECT_DIR$/resources/views/book.blade.php" afterDir="false" />
+    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Попытки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaveController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/newbook.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/newbook.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +180,7 @@
       <workItem from="1619006942563" duration="6640000" />
       <workItem from="1619016574288" duration="219000" />
       <workItem from="1619088351801" duration="5483000" />
-      <workItem from="1619160300260" duration="15626000" />
+      <workItem from="1619160300260" duration="25410000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -324,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619167762540</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Попытки">
+      <created>1619180372897</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1619180372897</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,6 +361,7 @@
     <MESSAGE value="маленькие исправления моделей" />
     <MESSAGE value="Изменение представления" />
     <MESSAGE value="Работа с формой создания новой книги" />
-    <option name="LAST_COMMIT_MESSAGE" value="Работа с формой создания новой книги" />
+    <MESSAGE value="Попытки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Попытки" />
   </component>
 </project>
