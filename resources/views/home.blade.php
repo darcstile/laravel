@@ -25,9 +25,8 @@
                                 <td> @foreach ($book->categories as $category)
                                         {{ $category->name }}
                                     @endforeach</td>
-								<td>@foreach ($book->tags as $tag)
-                                        {{ $tag->name }}
-                                    @endforeach</td>
+								<td>($book->tags as $tag)
+                                    {{ $tag->name }}</td>
 								<td>{{$book->shelf['name']}}</td>
 								<td>{{$book->reader['FIO']}}</td>
 								<td>{{$book->date_take}}</td>

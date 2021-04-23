@@ -15,4 +15,11 @@ class MainController extends Controller
         $books = Book::all();
         return view('home',compact('books'));
     }
+
+    public function newbook()
+    {
+        $books = Book::all();
+        $shelves = Shelf::all();
+        return view('newbook',compact('shelves'));
+    }
 }

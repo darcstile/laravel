@@ -10,7 +10,14 @@
 
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <div style="display:flex; width: 100%; justify-content: space-between">
+        <div>
 		<a class="navbar-brand" href="#">Библиотека</a>
+        </div>
+        <div>
+        <a href="newbook" class="btn btn-primary" >Новая книга</a>
+        </div>
+        </div>
 	</nav>
 
 	<div class="container">

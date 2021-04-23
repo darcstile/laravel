@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\MainController@index');
+Route::get('/newbook', 'App\Http\Controllers\MainController@newbook');
 
 //Route::get('/about', function () {
 //    return view('home');
