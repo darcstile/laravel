@@ -15,7 +15,7 @@
             <select class="custom-select">
                 <option selected></option>
                 @foreach ($shelves as $shelf)
-                    <option value="{{ $shelf->id }}">{{ $shelf->name }}</option>
+                    <option value="{{ $shelf->id }}">{{ $shelf->name}}</option>
                 @endforeach
             </select>
         </div>

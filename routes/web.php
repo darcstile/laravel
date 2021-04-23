@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\MainController@index');
-Route::get('/newbook', 'App\Http\Controllers\MainController@newbook');
+Route::get('/books', 'App\Http\Controllers\MainController@index');
+Route::get('/books/create', 'App\Http\Controllers\MainController@create');
+Route::post('/books/edit', 'App\Http\Controllers\MainController@edit');
 
 //Route::get('/about', function () {
 //    return view('home');

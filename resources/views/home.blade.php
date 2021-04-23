@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-@if(count($books))
+@if(count($books)!=0)
 <div class="table-responsive">
 					<table class="table table-hover table-striped">
 						<thead>
@@ -21,12 +21,13 @@
 							<tr>
 								<th scope="row">{{$book->id}}</th>
 								<td><img src="../public/img/{{$book->picture}}." style="width: 50px;"></td>
-								<td>{{$book->name }}</td>
+								<td><a href="books/edit/{{$book->id}}">{{$book->name }}</a></td>
                                 <td> @foreach ($book->categories as $category)
                                         {{ $category->name }}
                                     @endforeach</td>
-								<td>($book->tags as $tag)
-                                    {{ $tag->name }}</td>
+								<td>@foreach ($book->tags as $tag)
+                                    {{ $tag->name }}
+                                    @endforeach</td>
 								<td>{{$book->shelf['name']}}</td>
 								<td>{{$book->reader['FIO']}}</td>
 								<td>{{$book->date_take}}</td>
