@@ -2,6 +2,7 @@
 
 @section('content')
 @if(count($books)!=0)
+    <div class="container">
 <div class="table-responsive">
 					<table class="table table-hover table-striped">
 						<thead>
@@ -42,6 +43,7 @@
 					</table>
 
 				</div><!-- ./table-responsive-->
+    </div>
     @endif
 @endsection
 
