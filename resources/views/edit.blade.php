@@ -11,9 +11,21 @@
                             <div class="col-md-11">
                                 <div class="alert alert-danger" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">x</span>
+                                        <span aria-hidden="true">&#10006</span>
                                     </button>
                                     {{$errors->first() }}
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                    @if(session('success'))
+                        <div class="row justify-content-center">
+                            <div class="col-md-11">
+                                <div class="alert alert-success" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&#10006</span>
+                                    </button>
+                                    {{session()->get('success') }}
                                 </div>
                             </div>
                         </div>
@@ -75,7 +87,7 @@
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Дата взятия:</label>
-                <input type="text" name="date_take" id="date_take" class="form-control" id="formGroupExampleInput2" value="{{$item->date_take}}">
+                <input type="date" name="date_take" id="date_take" class="form-control" id="formGroupExampleInput2" value="{{$item->date_take}}">
             </div>
         </div>
             <div class="col-md-4" style="float: right;">
@@ -83,9 +95,9 @@
                     <div class="form">
                         <div style="background: #F1F1F1; border: 1px solid #CCCCCC; padding: 10px;">
                             <h3>Изображение книги</h3>
-                            <img src="../../../public/img/{{$item->picture}}" class="picture" style="max-width: 300px;">
-                            <input type="file" name="picture" id="picture">
-                            <input type="text" name="picture_name" id="picture_name " value="../../../public/img/{{$item->picture}}" hidden>
+                            <img src="../../../public{{$url = Storage::url($item->picture)}}" class="picture" style="max-width: 300px;">
+                            <input type="file" name="image" id="image">
+                            <input type="text" name="picture" id="picture " value="{{$item->picture}}" hidden>
                         </div>
                     </div>
                 </div>

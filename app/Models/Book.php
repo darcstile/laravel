@@ -34,7 +34,7 @@ class book extends Model
             'tag',
             'reader_id',
             'date_take',
-            'picture_name',
+            'picture',
             'book_id',
         ];
 }

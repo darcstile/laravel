@@ -74,6 +74,7 @@ class PostController extends BaseController
         return view('edit',compact('item', 'itemList','shelves','categories','tags','readers'));
     }
 
+
     /**
      * Update the specified resource in storage.
      *
@@ -83,6 +84,14 @@ class PostController extends BaseController
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'name' => 'required|min:5|max:200',
+            'author' => 'max:200',
+            'category_id' => 'required|integer|exist:categories,id',
+        ];
+
+        $validatedData = $this-> validate($request,$rules);
+
         $item = Book::find($id);
         $BC = DB::table('book_category')->where('book_id', $id)->value('id');
         $BT = DB::table('book_tag')->where('book_id', $id)->value('id');
@@ -104,6 +113,28 @@ class PostController extends BaseController
         $result_tag = $BookTag
             ->fill($data_tag)
             ->save();
+
+        $request->validate([
+
+            // файл должен быть картинкой (jpeg, png, bmp, gif, svg или webp)
+            'image' => 'image',
+
+            // поддерживаемые MIME файла (image/jpeg, image/png)
+            'image' => 'mimetypes:image/jpeg,image/png',
+
+        ]);
+
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $file_path = $request->file('image')->store('public') ;
+            $array = [
+                'picture' => $file_path
+            ];
+            $result_path = $item
+                ->fill($array)
+                ->save();
+        }
         if ($result) {
             return redirect()
                 ->route('books.edit', $item->id)
