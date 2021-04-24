@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class book extends Model
 {
@@ -23,4 +24,17 @@ class book extends Model
     public function tags(){
         return $this->belongsToMany(Tag::class);
     }
+
+    protected $fillable
+        = [
+            'name',
+            'author',
+            'category',
+            'shelf_id',
+            'tag',
+            'reader_id',
+            'date_take',
+            'picture_name',
+            'book_id',
+        ];
 }

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\library;
 
 use App\Models\Book;
+use App\Models\BookCategory;
+use App\Models\BookTag;
 use App\Models\Category;
 use App\Models\Shelf;
 use App\Models\Reader;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends BaseController
 {
@@ -80,7 +83,35 @@ class PostController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        dd(__METHOD__, $request->all(), $id);
+        $item = Book::find($id);
+        $BC = DB::table('book_category')->where('book_id', $id)->value('id');
+        $BT = DB::table('book_tag')->where('book_id', $id)->value('id');
+        $BookCategory = BookCategory::find($BC);
+        $BookTag = BookTag::find($BT);
+        if (empty($item)) {
+            return back()
+                ->withErrors(['msg' => "Запись id=[{$id}] не найдена"]);
+        }
+        $data = $request->only('name','author','date_take','shelf_id','reader_id');
+        $result = $item
+            ->fill($data)
+            ->save();
+        $data_category = $request->only('category_id');
+        $result_category = $BookCategory
+            ->fill($data_category)
+            ->save();
+        $data_tag = $request->only('tag_id');
+        $result_tag = $BookTag
+            ->fill($data_tag)
+            ->save();
+        if ($result) {
+            return redirect()
+                ->route('books.edit', $item->id)
+                ->with(['success' => 'Успешно сохранено']);
+        } else {
+            return back()
+                ->withErrors(['msg'=> 'Ошибка сохранения']);
+        }
     }
 
     /**

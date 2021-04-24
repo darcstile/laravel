@@ -12,20 +12,20 @@ class MainController extends Controller
 {
     public function index()
     {
-        $books = Book::all();
-        return view('home',compact('books'));
+       // $books = Book::all();
+       // return view('home',compact('books'));
     }
 
     public function create()
     {
-        $books = Book::all();
-        $shelves = Shelf::all();
-        return view('newbook',compact('shelves'));
+        //$books = Book::all();
+       // $shelves = Shelf::all();
+       // return view('newbook',compact('shelves'));
     }
     public function edit($id)
     {
-        $item = Book::findOrFail($id);
-        $itemList = Book::all();
-        return view('book',compact('item', 'itemList'));
+        //$item = Book::findOrFail($id);
+        //$itemList = Book::all();
+        //return view('book',compact('item', 'itemList'));
     }
 }

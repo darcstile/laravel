@@ -10,4 +10,9 @@ class BookTag extends Model
     use HasFactory;
 
     protected $table = 'Book_Tag';
+    protected $fillable
+        = [
+
+            'tag_id',
+        ];
 }
