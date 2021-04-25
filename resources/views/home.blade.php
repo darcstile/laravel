@@ -3,6 +3,7 @@
 @section('content')
 @if(count($books)!=0)
     <div class="container">
+        <a href="{{route('books.create') }}" class="btn btn-primary"  style="margin-bottom: 10px; float: right">Новая книга</a>
 <div class="table-responsive">
 					<table class="table table-hover table-striped">
 						<thead>

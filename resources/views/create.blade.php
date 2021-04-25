@@ -3,8 +3,7 @@
 
     <div class="container" >
         @php /** @var \App\Models\Book $item */  @endphp
-        <form method="post" action="{{route('books.update',$item->id)}}" enctype="multipart/form-data">
-            @method('PATCH')
+        <form method="post" action="{{route('books.store')}}" enctype="multipart/form-data">
             @csrf
             @if($errors->any())
                 <div class="row justify-content-center">
@@ -34,21 +33,16 @@
                 <div class="col-md-8" style="float: left;">
                     <div class="form-group">
                         <label for="formGroupExampleInput">Имя книги:</label>
-                        <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" value="{{$item->name}}">
-                        <input type="text" name="book_id" id="book_id" class="form-control" id="formGroupExampleInput" value="{{$item->id}}" hidden>
+                        <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" value="">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Автор:</label>
-                        <input type="text" name="author" id="author" class="form-control" id="formGroupExampleInput2" value="{{$item->author}}">
+                        <input type="text" name="author" id="author" class="form-control" id="formGroupExampleInput2" value="">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Категория:</label>
                         <select class="custom-select" name="category_id" id="category_id">
-                            <option selected value="@foreach ($item->categories as $category)
-                            {{ $category->id }}
-                            @endforeach"> @foreach ($item->categories as $category)
-                                    {{ $category->name }}
-                                @endforeach </option>
+                            <option selected value=""></option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
@@ -57,7 +51,7 @@
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Полка:</label>
                         <select class="custom-select" name="shelf_id" id="shelf_id">
-                            <option selected value="{{ $item->shelf['id'] }}">{{$item->shelf['name']}}</option>
+                            <option selected value=""></option>
                             @foreach ($shelves as $shelf)
                                 <option  value="{{ $shelf->id }}">{{ $shelf->name }}</option>
                             @endforeach
@@ -66,11 +60,7 @@
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Метка:</label>
                         <select class="custom-select" name="tag_id" id="tag_id">
-                            <option selected value="@foreach ($item->tags as $tag)
-                            {{ $tag->id }}
-                            @endforeach"> @foreach ($item->tags as $tag)
-                                    {{ $tag->name }}
-                                @endforeach </option>
+                            <option selected value=""></option>
                             @foreach ($tags as $tag)
                                 <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                             @endforeach
@@ -79,7 +69,7 @@
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Читатель:</label>
                         <select class="custom-select" name="reader_id" id="reader_id">
-                            <option selected value="{{$item->reader['id']}}">{{$item->reader['FIO']}}</option>
+                            <option selected value=""></option>
                             @foreach ($readers as $reader)
                                 <option value="{{ $reader->id }}">{{ $reader->FIO }}</option>
                             @endforeach
@@ -87,7 +77,7 @@
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Дата взятия:</label>
-                        <input type="date" name="date_take" id="date_take" class="form-control" id="formGroupExampleInput2" value="{{$item->date_take}}">
+                        <input type="date" name="date_take" id="date_take" class="form-control" id="formGroupExampleInput2" value="">
                     </div>
                 </div>
                 <div class="col-md-4" style="float: right;">
@@ -95,15 +85,15 @@
                         <div class="form">
                             <div style="background: #F1F1F1; border: 1px solid #CCCCCC; padding: 10px;">
                                 <h3>Изображение книги</h3>
-                                <img src="../../../public{{$url = Storage::url($item->picture)}}" class="picture" style="max-width: 300px;">
+                                <img src="" class="picture" style="max-width: 300px;">
                                 <input type="file" name="image" id="image">
-                                <input type="text" name="picture" id="picture " value="{{$item->picture}}" hidden>
+                                <input type="text" id="picture " value="" hidden>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <input type="submit" class="btn btn-save btn-primary" name="add_item" value="Сохранить" style="margin-top: 10px; float: left">
+            <input type="submit" class="btn btn-save btn-primary" value="Сохранить" style="margin-top: 10px; float: left">
         </form>
 
 @endsection

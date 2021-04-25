@@ -15,7 +15,6 @@
 		<a class="navbar-brand" href="#">Библиотека</a>
         </div>
         <div>
-        <a href="newbook" class="btn btn-primary" >Новая книга</a>
         </div>
         </div>
 	</nav>

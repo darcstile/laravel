@@ -11,6 +11,7 @@ use App\Models\Reader;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Validator;
 
 class PostController extends BaseController
 {
@@ -32,7 +33,16 @@ class PostController extends BaseController
      */
     public function create()
     {
-        //
+
+        $item = new Book();
+        $itemList = Book::all();
+        $bookCategory = new BookCategory();
+        $bookTag = new BookTag();
+        $shelves = Shelf::all();
+        $categories = Category::all();
+        $tags = Tag::all();
+        $readers = Reader::all();
+        return view('create',compact('item', 'itemList','bookCategory','bookTag','shelves','categories','tags','readers'));
     }
 
     /**
@@ -43,7 +53,48 @@ class PostController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+       $data = $request->all();
+       $item = new Book($data);
+       $item->save();
+       $category =  $request->input('category_id');
+       $book = $item['id'];
+       $item_category = new BookCategory;
+       $item_category->category_id = $category;
+       $item_category->book_id = $book;
+       $item_category->save();
+       $tag = $request->input('tag_id');
+       $item_tag = new BookTag;
+       $item_tag->tag_id = $tag;
+       $item_tag->book_id = $book;
+       $item_tag->save();
+
+        $request->validate([
+
+            // файл должен быть картинкой (jpeg, png, bmp, gif, svg или webp)
+            'image' => 'image',
+
+            // поддерживаемые MIME файла (image/jpeg, image/png)
+            'image' => 'mimetypes:image/jpeg,image/png',
+
+        ]);
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $file_path = $request->file('image')->store('public') ;
+            $array = [
+                'picture' => $file_path
+            ];
+            $result_path = $item
+                ->fill($array)
+                ->save();
+        }
+       if ($item){
+           return redirect()->route('books.edit', [$item->id])
+               ->with(['success' => 'Успешно сохранено']);
+       } else {
+           return back()->withErrors(['msg' => 'Ошибка сохранения'])
+               ->withInput();
+       }
     }
 
     /**
@@ -84,13 +135,13 @@ class PostController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $rules = [
-            'name' => 'required|min:5|max:200',
-            'author' => 'max:200',
-            'category_id' => 'required|integer|exist:categories,id',
-        ];
-
-        $validatedData = $this-> validate($request,$rules);
+//        $rules = [
+//            'name' => 'required|min:5|max:200',
+//            'author' => 'max:200',
+//            'category_id' => 'required|integer|exist:categories,id',
+//        ];
+//
+//        $validatedData = $this-> validate($request,$rules);
 
         $item = Book::find($id);
         $BC = DB::table('book_category')->where('book_id', $id)->value('id');

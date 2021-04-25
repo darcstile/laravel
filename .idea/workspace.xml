@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Завершение работы над редактированием книг">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/library/BookController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/autostop.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/harry.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/lord.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/osten.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/pullman.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +182,8 @@
       <workItem from="1619016574288" duration="219000" />
       <workItem from="1619088351801" duration="5483000" />
       <workItem from="1619160300260" duration="27345000" />
-      <workItem from="1619244709735" duration="26243000" />
+      <workItem from="1619244709735" duration="29628000" />
+      <workItem from="1619337100741" duration="6948000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -356,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619262876046</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Завершение работы над редактированием книг">
+      <created>1619279872189</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1619279872189</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
