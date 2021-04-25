@@ -105,5 +105,12 @@
                     </div>
             <input type="submit" class="btn btn-save btn-primary" name="add_item" value="Сохранить" style="margin-top: 10px; float: left">
         </form>
+    @if($item->exists)
+            <form method="post" action="{{ route('books.destroy', $item->id) }}">
+                @method('DELETE')
+                @csrf
+                <input type="submit" class="btn btn-danger btn-primary" name="delete_item" value="Удалить" style="margin-top: 10px; float: left; margin-left: 10px;">
+            </form>
+    @endif
 
 @endsection

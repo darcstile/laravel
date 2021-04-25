@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Validator;
 
+
 class PostController extends BaseController
 {
     /**
@@ -204,6 +205,19 @@ class PostController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        $BC = DB::table('book_category')->where('book_id', $id)->value('id');
+        $BT = DB::table('book_tag')->where('book_id', $id)->value('id');
+        $BookCategory = BookCategory::find($BC)->forceDelete();
+        $BookTag = BookTag::find($BT)->forceDelete();
+        $result = Book::find($id)->forceDelete();
+
+
+        if ($result){
+            return redirect()
+                ->route('books.index')
+                ->with(['success'=> "Запись id[$id] удалена!"]);
+        } else {
+            return back()->withErrors(['msg' => 'Ошибка удаления']);
+        }
     }
 }
