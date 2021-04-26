@@ -12,6 +12,8 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 
 class PostController extends BaseController
@@ -179,7 +181,8 @@ class PostController extends BaseController
 
         if($request->hasFile('image')) {
             $file = $request->file('image');
-            $file_path = $request->file('image')->store('public') ;
+//            $file_path = $request->file('image')->store('public') ;
+            $file_path = $request->file('image')->store('public');
             $array = [
                 'picture' => $file_path
             ];
@@ -205,12 +208,21 @@ class PostController extends BaseController
      */
     public function destroy($id)
     {
-        $BC = DB::table('book_category')->where('book_id', $id)->value('id');
-        $BT = DB::table('book_tag')->where('book_id', $id)->value('id');
-        $BookCategory = BookCategory::find($BC)->forceDelete();
-        $BookTag = BookTag::find($BT)->forceDelete();
+        $book_category = DB::table('book_category')->where('book_id', $id)->value('id');
+        $book_tag = DB::table('book_tag')->where('book_id', $id)->value('id');
+        $item = Book::find($id);
+//        dd($item->picture);
+        $BookCategory = BookCategory::find($book_category)->forceDelete();
+        $BookTag = BookTag::find($book_tag)->forceDelete();
         $result = Book::find($id)->forceDelete();
 
+        $url = $item->picture;
+//        dd($url);
+        Storage::delete($url);
+//        dd($item->picture);
+//        Class 'App\Http\Controllers\library\Storage' not found
+//        File::delete($url);
+//        "public/wbSxorrP0ZKdBXZwzKB0jVUiYCdXKLsn4xOBWHs9.png"
 
         if ($result){
             return redirect()

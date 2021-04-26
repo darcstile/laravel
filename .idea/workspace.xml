@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Завершение работы над созданием  книг">
+    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Создание функционала удаления книги">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +180,8 @@
       <workItem from="1619088351801" duration="5483000" />
       <workItem from="1619160300260" duration="27345000" />
       <workItem from="1619244709735" duration="29628000" />
-      <workItem from="1619337100741" duration="9834000" />
+      <workItem from="1619337100741" duration="19695000" />
+      <workItem from="1619418294048" duration="519000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -365,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619347364296</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Создание функционала удаления книги">
+      <created>1619354551503</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1619354551503</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,6 +408,7 @@
     <MESSAGE value="Создание редактирования книг" />
     <MESSAGE value="Завершение работы над редактированием книг" />
     <MESSAGE value="Завершение работы над созданием  книг" />
-    <option name="LAST_COMMIT_MESSAGE" value="Завершение работы над созданием  книг" />
+    <MESSAGE value="Создание функционала удаления книги" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создание функционала удаления книги" />
   </component>
 </project>
