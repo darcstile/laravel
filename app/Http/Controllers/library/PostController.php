@@ -192,7 +192,7 @@ class PostController extends BaseController
         }
         if ($result) {
             return redirect()
-                ->route('books.edit', $item->id)
+                ->route('books.edit', $item->id )
                 ->with(['success' => 'Успешно сохранено']);
         } else {
             return back()
@@ -211,19 +211,11 @@ class PostController extends BaseController
         $book_category = DB::table('book_category')->where('book_id', $id)->value('id');
         $book_tag = DB::table('book_tag')->where('book_id', $id)->value('id');
         $item = Book::find($id);
-//        dd($item->picture);
         $BookCategory = BookCategory::find($book_category)->forceDelete();
         $BookTag = BookTag::find($book_tag)->forceDelete();
         $result = Book::find($id)->forceDelete();
-
         $url = $item->picture;
-//        dd($url);
         Storage::delete($url);
-//        dd($item->picture);
-//        Class 'App\Http\Controllers\library\Storage' not found
-//        File::delete($url);
-//        "public/wbSxorrP0ZKdBXZwzKB0jVUiYCdXKLsn4xOBWHs9.png"
-
         if ($result){
             return redirect()
                 ->route('books.index')

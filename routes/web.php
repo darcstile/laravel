@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 
     Route::resource('books', 'App\Http\Controllers\library\PostController');
 
-//Route::get('books/create', 'App\Http\Controllers\MainController@create');
-//Route::post('books/edit', 'App\Http\Controllers\MainController@edit');
+//Route::get('books', 'App\Http\Controllers\PostController@index');
+//Route::post('books/edit', 'App\Http\Controllers\PostController@edit');
+//Route::post('books/update', 'App\Http\Controllers\PostController@update');
+
 
 //Route::get('/about', function () {
 //    return view('home');
