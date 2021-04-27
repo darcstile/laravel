@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Завершение написания тестов">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CategoryBook.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TagBook.php" beforeDir="false" />
+    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Удаление мусора">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +181,7 @@
       <workItem from="1619337100741" duration="19695000" />
       <workItem from="1619418294048" duration="24483000" />
       <workItem from="1619501395318" duration="11276000" />
-      <workItem from="1619518129270" duration="1824000" />
+      <workItem from="1619518129270" duration="2140000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -402,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619513836241</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Удаление мусора">
+      <created>1619521857336</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1619521857336</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,6 +447,7 @@
     <MESSAGE value="Начало работы с тестами" />
     <MESSAGE value="Написание тестов" />
     <MESSAGE value="Завершение написания тестов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Завершение написания тестов" />
+    <MESSAGE value="Удаление мусора" />
+    <option name="LAST_COMMIT_MESSAGE" value="Удаление мусора" />
   </component>
 </project>

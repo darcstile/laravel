@@ -9,13 +9,9 @@ use App\Models\Category;
 use App\Models\Shelf;
 use App\Models\Reader;
 use App\Models\Tag;
-use App\Http\Requests\PostControllerUpdateRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\Validator;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use \Illuminate\Http\Response;
+
 
 
 class PostController extends BaseController
@@ -38,7 +34,6 @@ class PostController extends BaseController
      */
     public function create()
     {
-
         $item = new Book();
         $itemList = Book::all();
         $bookCategory = new BookCategory();
@@ -61,12 +56,14 @@ class PostController extends BaseController
        $data = $request->all();
        $item = new Book($data);
        $item->save();
+
        $category =  $request->input('category_id');
        $book = $item['id'];
        $item_category = new BookCategory;
        $item_category->category_id = $category;
        $item_category->book_id = $book;
        $item_category->save();
+
        $tag = $request->input('tag_id');
        if ($tag != null){
        $item_tag = new BookTag;
@@ -74,7 +71,6 @@ class PostController extends BaseController
        $item_tag->book_id = $book;
        $item_tag->save();
        }
-
         if($request->hasFile('image')) {
             $file = $request->file('image');
             $file_path = $request->file('image')->store('public') ;
