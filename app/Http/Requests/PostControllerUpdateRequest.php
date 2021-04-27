@@ -21,16 +21,18 @@ class PostControllerUpdateRequest extends FormRequest
      *
      * @return array
      */
+
     public function rules()
     {
         return [
             'name' => 'required|min:3|max:200',
-            'author' => 'max:200',
+            'author' => 'string|max:200|nullable',
             'category_id' => 'required|integer|exists:categories,id',
             'shelf_id' => 'required|integer|exists:shelves,id',
-            'tag_id' => 'integer|exists:tags,id',
-            'reader_id' => 'integer|exists:readers,id',
-            'date_take' => 'date'
+            'tag_id' => 'integer|exists:tags,id|nullable',
+            'reader_id' => 'integer|exists:readers,id|nullable',
+            'date_take' => 'date|nullable',
+            'image' => 'image|mimetypes:image/jpeg,image/png',
         ];
     }
 }

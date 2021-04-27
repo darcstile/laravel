@@ -69,7 +69,7 @@
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Читатель:</label>
                         <select class="custom-select" name="reader_id" id="reader_id">
-                            <option selected value=""></option>
+                            <option selected value=" {{ $readers[0]->id }} ">{{ $readers[0]->FIO }}</option>
                             @foreach ($readers as $reader)
                                 <option value="{{ $reader->id }}">{{ $reader->FIO }}</option>
                             @endforeach
@@ -77,7 +77,7 @@
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Дата взятия:</label>
-                        <input type="date" name="date_take" id="date_take" class="form-control" id="formGroupExampleInput2" value="">
+                        <input type="date" name="date_take" id="date_take" class="form-control" id="formGroupExampleInput2" value="{{null}}">
                     </div>
                 </div>
                 <div class="col-md-4" style="float: right;">

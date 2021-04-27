@@ -58,7 +58,6 @@ class PostController extends BaseController
      */
     public function store(PostControllerUpdateRequest $request)
     {
-
        $data = $request->all();
        $item = new Book($data);
        $item->save();
@@ -69,20 +68,12 @@ class PostController extends BaseController
        $item_category->book_id = $book;
        $item_category->save();
        $tag = $request->input('tag_id');
+       if ($tag != null){
        $item_tag = new BookTag;
        $item_tag->tag_id = $tag;
        $item_tag->book_id = $book;
        $item_tag->save();
-
-        $request->validate([
-
-            // файл должен быть картинкой (jpeg, png, bmp, gif, svg или webp)
-            'image' => 'image',
-
-            // поддерживаемые MIME файла (image/jpeg, image/png)
-            'image' => 'mimetypes:image/jpeg,image/png',
-
-        ]);
+       }
 
         if($request->hasFile('image')) {
             $file = $request->file('image');
@@ -95,11 +86,9 @@ class PostController extends BaseController
                 ->save();
         }
        if ($item){
-           return redirect()->route('books.edit', [$item->id])
+           return redirect()->route('books.edit', [$item->id], 301)
                ->with(['success' => 'Успешно сохранено']);
        } else {
-           return response('Bad Request', 400)
-               ->header('Content-Type', 'text/plain');
            return back()->withErrors(['msg' => 'Ошибка сохранения'])
                ->withInput();
        }
@@ -143,7 +132,6 @@ class PostController extends BaseController
      */
     public function update(PostControllerUpdateRequest $request, $id)
     {
-
         $item = Book::find($id);
         $BC = DB::table('book_category')->where('book_id', $id)->value('id');
         $BT = DB::table('book_tag')->where('book_id', $id)->value('id');
@@ -166,17 +154,6 @@ class PostController extends BaseController
             ->fill($data_tag)
             ->save();
 
-        $request->validate([
-
-            // файл должен быть картинкой (jpeg, png, bmp, gif, svg или webp)
-            'image' => 'image',
-
-            // поддерживаемые MIME файла (image/jpeg, image/png)
-            'image' => 'mimetypes:image/jpeg,image/png',
-
-        ]);
-
-
         if($request->hasFile('image')) {
             $file = $request->file('image');
 //            $file_path = $request->file('image')->store('public') ;
@@ -194,8 +171,6 @@ class PostController extends BaseController
                 ->with(['success' => 'Успешно сохранено']);
 
         } else {
-//            return response('Bad Request', 400)
-//                ->header('Content-Type', 'text/plain');
             return back()
                 ->withErrors(['msg'=> 'Ошибка сохранения']);
 
@@ -213,9 +188,15 @@ class PostController extends BaseController
         $book_category = DB::table('book_category')->where('book_id', $id)->value('id');
         $book_tag = DB::table('book_tag')->where('book_id', $id)->value('id');
         $item = Book::find($id);
+        if ($book_category != null){
         $BookCategory = BookCategory::find($book_category)->forceDelete();
-        $BookTag = BookTag::find($book_tag)->forceDelete();
-        $result = Book::find($id)->forceDelete();
+        }
+        if ($book_tag != null) {
+            $BookTag = BookTag::find($book_tag)->forceDelete();
+        }
+        if ($item != null) {
+            $result = Book::find($id)->forceDelete();
+        }
         $url = $item->picture;
         Storage::delete($url);
         if ($result){

@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 //use PHPUnit\Framework\TestCase;
 use Tests\TestCase;
+use App\Models\Book;
 
 class BookTest extends TestCase
 {
@@ -17,8 +18,37 @@ class BookTest extends TestCase
         $response = $this->get('books');
         $response->assertOk();
     }
+    public function testCreate(){
+        $response = $this->get('books/create');
+        $response->assertOk();
+    }
+    public function testStoreFailed(){
+        $response = $this->post('books',[
+            'author' => 'test',                                                      /////////////////////////////////
+            'name' => 'test',                                                        //                            //
+            'reader_id' => '0',                                                      //     Создание записи,       //
+            'shelf_id' => '7',                                                       //    не прошедшее валидацию  //
+            'category_id' => '',                                                     //                            //
+            'tag_id' => '1',                                                         ////////////////////////////////
+        ]);
+//        dd($response->status());
+        $response->assertStatus(302); // Так как категория не была указана, валидатор вернет статус 302
+    }
+    public function testStoreSuccessful(){
+        $response = $this->post('books',[
+            'author' => 'test',                                                      /////////////////////////////////
+            'name' => 'test',                                                        //                            //
+            'reader_id' => '0',                                                      //  Успешное создание записи  //
+            'shelf_id' => '7',                                                       //                            //
+            'category_id' => '1',                                                    //                            //
+            'tag_id' => '1',                                                         ////////////////////////////////
+        ]);
+//        dd($response->status());
+        $response->assertStatus(301); // Ошибок нет,  PostController вернет статус 301
+    }
     public function testEditSuccessful(){
-        $response = $this->get('books/6/edit'); // объект, который существует в базе
+        $item= Book::all()->last()->id; // Находим последний созданный объект
+        $response = $this->get('books/'.$item.'/edit'); // объект, который существует в базе
 //        dd($response->getContent());
         $response->assertOk();
     }
@@ -29,11 +59,10 @@ class BookTest extends TestCase
         $response->assertNotFound();
     }
     public function testUpdateSuccesfull(){
-        $response = $this->patch('books/6',[
-            'id' => '6',                                                             /////////////////////////////////
-            'author' => 'Филип Пулман',                                              //                            //
-            'name' => 'Тёмные начала',                                               //                            //
-            'picture' => 'public/gET7iNo7TgQPd8Mxlm0KpwCWjc5DHhN8MOvtS240.jpg',      //  Изменение существующей    //
+        $item= Book::all()->last()->id;
+        $response = $this->patch('books/'.$item ,[                                   /////////////////////////////////
+            'author' => 'test',                                                      //                            //
+            'name' => 'test',                                                        //  Изменение существующей    //
             'reader_id' => '7',                                                      //      в базе записи         //
             'shelf_id' => '7',                                                       //                            //
             'category_id' => '1',                                                    //                            //
@@ -43,17 +72,25 @@ class BookTest extends TestCase
         $response->assertStatus(301);                  // Если запись успешно изменена PostController вернет статус 301
     }
     public function testUpdateFailed(){
-        $response = $this->patch('books/0',[
-            'id' => '6',                                                             /////////////////////////////////
-            'author' => 'Филип Пулман',                                              //  Изменение не существующей //
-            'name' => 'Тёмные начала',                                               //       в базе записи        //
-            'picture' => 'public/gET7iNo7TgQPd8Mxlm0KpwCWjc5DHhN8MOvtS240.jpg',      //  (Или любое изменение не   //
-            'reader_id' => '7',                                                      //    прошедшее валидацию)    //
-            'shelf_id' => '7',                                                       //                            //
-            'category_id' => '1',                                                     ////////////////////////////////
+        $response = $this->patch('books/0',[                                         /////////////////////////////////
+            'author' => 'test',                                                      //  Изменение не существующей //
+            'name' => 'test',                                                        //       в базе записи        //
+            'reader_id' => '7',                                                      //   (Или любое изменение не  //
+            'shelf_id' => '7',                                                       //     прошедшее валидацию)   //
+            'category_id' => '1',                                                    ////////////////////////////////
         ]);
 //        dd($response->status());
-        $response->assertStatus(302);     // Так как записи не существует, валидатор в PostController вернет статус 302
+        $response->assertStatus(302);  // Так как записи не существует, валидатор PostControllerUpdateRequest вернет статус 302
     }
 
+    public function testDestroyFailed(){
+        $response = $this->delete('books/0');
+//        dd($response->status());
+        $response->assertStatus(500); // Ошибка сервера, так как такого объекта не существует
+    }
+    public function testDestroySuccessful(){
+        $item= Book::all()->last()->id;
+        $response = $this->delete('books/'.$item);
+        $response->assertStatus(302); // PostController, после редиректа возвращает статус 302
+    }
 }
