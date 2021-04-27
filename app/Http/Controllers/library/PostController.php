@@ -9,11 +9,13 @@ use App\Models\Category;
 use App\Models\Shelf;
 use App\Models\Reader;
 use App\Models\Tag;
+use App\Http\Requests\PostControllerUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use \Illuminate\Http\Response;
 
 
 class PostController extends BaseController
@@ -54,8 +56,9 @@ class PostController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostControllerUpdateRequest $request)
     {
+
        $data = $request->all();
        $item = new Book($data);
        $item->save();
@@ -95,6 +98,8 @@ class PostController extends BaseController
            return redirect()->route('books.edit', [$item->id])
                ->with(['success' => 'Успешно сохранено']);
        } else {
+           return response('Bad Request', 400)
+               ->header('Content-Type', 'text/plain');
            return back()->withErrors(['msg' => 'Ошибка сохранения'])
                ->withInput();
        }
@@ -136,15 +141,8 @@ class PostController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostControllerUpdateRequest $request, $id)
     {
-//        $rules = [
-//            'name' => 'required|min:5|max:200',
-//            'author' => 'max:200',
-//            'category_id' => 'required|integer|exist:categories,id',
-//        ];
-//
-//        $validatedData = $this-> validate($request,$rules);
 
         $item = Book::find($id);
         $BC = DB::table('book_category')->where('book_id', $id)->value('id');
@@ -192,11 +190,15 @@ class PostController extends BaseController
         }
         if ($result) {
             return redirect()
-                ->route('books.edit', $item->id )
+                ->route('books.edit', $item->id, 301)
                 ->with(['success' => 'Успешно сохранено']);
+
         } else {
+//            return response('Bad Request', 400)
+//                ->header('Content-Type', 'text/plain');
             return back()
                 ->withErrors(['msg'=> 'Ошибка сохранения']);
+
         }
     }
 

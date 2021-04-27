@@ -4,9 +4,6 @@
     <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Начало работы с тестами">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/BookTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/BookTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +181,8 @@
       <workItem from="1619160300260" duration="27345000" />
       <workItem from="1619244709735" duration="29628000" />
       <workItem from="1619337100741" duration="19695000" />
-      <workItem from="1619418294048" duration="17350000" />
+      <workItem from="1619418294048" duration="24483000" />
+      <workItem from="1619501395318" duration="4327000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -382,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619418949746</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Начало работы с тестами">
+      <created>1619440613329</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1619440613329</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
