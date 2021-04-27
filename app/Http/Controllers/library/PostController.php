@@ -165,11 +165,9 @@ class PostController extends BaseController
             return redirect()
                 ->route('books.edit', $item->id, 301)
                 ->with(['success' => 'Успешно сохранено']);
-
         } else {
             return back()
                 ->withErrors(['msg'=> 'Ошибка сохранения']);
-
         }
     }
 
