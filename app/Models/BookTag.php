@@ -12,7 +12,6 @@ class BookTag extends Model
     protected $table = 'Book_Tag';
     protected $fillable
         = [
-
             'tag_id',
         ];
 }

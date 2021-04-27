@@ -12,7 +12,6 @@ class BookCategory extends Model
     protected $table = 'Book_Category';
     protected $fillable
         = [
-
             'category_id',
         ];
 }
