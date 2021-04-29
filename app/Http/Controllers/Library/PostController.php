@@ -10,12 +10,8 @@ use App\Models\Shelf;
 use App\Models\Reader;
 use App\Models\Tag;
 use App\Http\Requests\PostControllerUpdateRequest;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\Validator;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use \Illuminate\Http\Response;
+
 
 
 class PostController extends BaseController
@@ -131,15 +127,10 @@ class PostController extends BaseController
                 ->withErrors(['msg' => "Запись id=[{$id}] не найдена"]);
         }
         $data = $request->only('name','author','date_take','shelf_id','reader_id');
-//        $item->detach();
         $result = $item->update($data);
-//        $result = $item
-//            ->fill($data)
-//            ->save();
-        $category =  $request->input('category_id');
+        $category =  $request->only('category_id');
         $item->categories()->detach();
         $item->categories()->attach($category);
-
         $tag = $request->only('tag_id');
         $item->tags()->detach();
         $item->tags()->attach($tag);
@@ -176,18 +167,15 @@ class PostController extends BaseController
      */
     public function destroy($id)
     {
-        $book_category = DB::table('book_category')->where('book_id', $id)->value('id');
-        $book_tag = DB::table('book_tag')->where('book_id', $id)->value('id');
         $item = Book::find($id);
-        if ($book_category != null){
-        $BookCategory = BookCategory::find($book_category)->forceDelete();
+        if ($item->categories() != null){
+            $item->categories()->detach();
         }
-        if ($book_tag != null) {
-            $BookTag = BookTag::find($book_tag)->forceDelete();
+        if ($item->tags() != null) {
+            $item->tags()->detach();
         }
-        if ($item != null) {
-            $result = Book::find($id)->forceDelete();
-        }
+        $result = $item->delete();;
+
         $url = $item->picture;
         Storage::delete($url);
         if ($result){
