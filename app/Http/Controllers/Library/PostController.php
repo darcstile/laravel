@@ -61,24 +61,16 @@ class PostController extends BaseController
        $data = $request->all();
        $item = new Book($data);
        $item->save();
-
        $category =  $request->input('category_id');
-       $book = $item['id'];
-       $item_category = new BookCategory;
-       $item_category->category_id = $category;
-       $item_category->book_id = $book;
-       $item_category->save();
-
+        if ($category != null) {
+            $item->categories()->attach($category);
+        }
        $tag = $request->input('tag_id');
        if ($tag != null){
-       $item_tag = new BookTag;
-       $item_tag->tag_id = $tag;
-       $item_tag->book_id = $book;
-       $item_tag->save();
+            $item->tags()->attach($tag);
        }
 
         if($request->hasFile('image')) {
-            $file = $request->file('image');
             $file_path = $request->file('image')->store('public') ;
             $array = [
                 'picture' => $file_path
@@ -87,6 +79,7 @@ class PostController extends BaseController
                 ->fill($array)
                 ->save();
         }
+
        if ($item){
            return redirect()->route('books.edit', [$item->id], 301)
                ->with(['success' => 'Успешно сохранено']);
