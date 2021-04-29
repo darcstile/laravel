@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Удаление мусора">
+    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Работа над ошибками">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/library/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/BookTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BookTag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Library/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/BookCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BookCategory.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +186,7 @@
       <workItem from="1619518129270" duration="3203000" />
       <workItem from="1619603704892" duration="56000" />
       <workItem from="1619603776666" duration="1239000" />
-      <workItem from="1619686537376" duration="4670000" />
+      <workItem from="1619686537376" duration="9340000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -440,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619522142659</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Работа над ошибками">
+      <created>1619691475002</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1619691475002</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,6 +488,7 @@
     <MESSAGE value="Написание тестов" />
     <MESSAGE value="Завершение написания тестов" />
     <MESSAGE value="Удаление мусора" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удаление мусора" />
+    <MESSAGE value="Работа над ошибками" />
+    <option name="LAST_COMMIT_MESSAGE" value="Работа над ошибками" />
   </component>
 </project>

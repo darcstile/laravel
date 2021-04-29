@@ -40,14 +40,13 @@ class PostController extends BaseController
     {
 
         $item = new Book();
-        $itemList = Book::all();
         $bookCategory = new BookCategory();
         $bookTag = new BookTag();
         $shelves = Shelf::all();
         $categories = Category::all();
         $tags = Tag::all();
         $readers = Reader::all();
-        return view('create',compact('item', 'itemList','bookCategory','bookTag','shelves','categories','tags','readers'));
+        return view('create',compact('item', 'bookCategory','bookTag','shelves','categories','tags','readers'));
     }
 
     /**
@@ -66,14 +65,14 @@ class PostController extends BaseController
             $item->categories()->attach($category);
         }
        $tag = $request->input('tag_id');
-       if ($tag != null){
+       if ($tag != null) {
             $item->tags()->attach($tag);
        }
 
         if($request->hasFile('image')) {
-            $file_path = $request->file('image')->store('public') ;
+            $filePath = $request->file('image')->store('public') ;
             $array = [
-                'picture' => $file_path
+                'picture' => $filePath
             ];
             $result_path = $item
                 ->fill($array)
@@ -109,12 +108,11 @@ class PostController extends BaseController
     public function edit($id)
     {
         $item = Book::findOrFail($id);
-        $itemList = Book::all();
         $shelves = Shelf::all();
         $categories = Category::all();
         $tags = Tag::all();
         $readers = Reader::all();
-        return view('edit',compact('item', 'itemList','shelves','categories','tags','readers'));
+        return view('edit',compact('item', 'shelves','categories','tags','readers'));
     }
 
 
@@ -128,33 +126,31 @@ class PostController extends BaseController
     public function update(PostControllerUpdateRequest $request, $id)
     {
         $item = Book::find($id);
-        $BC = DB::table('book_category')->where('book_id', $id)->value('id');
-        $BT = DB::table('book_tag')->where('book_id', $id)->value('id');
-        $BookCategory = BookCategory::find($BC);
-        $BookTag = BookTag::find($BT);
         if (empty($item)) {
             return back()
                 ->withErrors(['msg' => "Запись id=[{$id}] не найдена"]);
         }
         $data = $request->only('name','author','date_take','shelf_id','reader_id');
-        $result = $item
-            ->fill($data)
-            ->save();
-        $data_category = $request->only('category_id');
-        $result_category = $BookCategory
-            ->fill($data_category)
-            ->save();
-        $data_tag = $request->only('tag_id');
-        $result_tag = $BookTag
-            ->fill($data_tag)
-            ->save();
+//        $item->detach();
+        $result = $item->update($data);
+//        $result = $item
+//            ->fill($data)
+//            ->save();
+        $category =  $request->input('category_id');
+        $item->categories()->detach();
+        $item->categories()->attach($category);
+
+        $tag = $request->only('tag_id');
+        $item->tags()->detach();
+        $item->tags()->attach($tag);
+
 
         if($request->hasFile('image')) {
             $file = $request->file('image');
 //            $file_path = $request->file('image')->store('public') ;
-            $file_path = $request->file('image')->store('public');
+            $filePath = $request->file('image')->store('public');
             $array = [
-                'picture' => $file_path
+                'picture' => $filePath
             ];
             $result_path = $item
                 ->fill($array)
