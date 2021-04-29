@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\library;
+namespace App\Http\Controllers\Library;
 
 use App\Models\Book;
 use App\Models\BookCategory;

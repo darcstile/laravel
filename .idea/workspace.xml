@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Работа над ошибками">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Library/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Library/BaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Library/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Reader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Shelf.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Shelf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +186,9 @@
       <workItem from="1619518129270" duration="3203000" />
       <workItem from="1619603704892" duration="56000" />
       <workItem from="1619603776666" duration="1239000" />
-      <workItem from="1619686537376" duration="10636000" />
+      <workItem from="1619686537376" duration="10762000" />
+      <workItem from="1619699982489" duration="78000" />
+      <workItem from="1619700071210" duration="500000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -458,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619698607885</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Работа над ошибками">
+      <created>1619699891480</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1619699891480</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
