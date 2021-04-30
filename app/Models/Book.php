@@ -13,10 +13,13 @@ class Book extends Model
     use HasFactory;
 
     public function reader(){
-        return $this->belongsTo(reader::class);
+        return $this->belongsTo(Reader::class);
     }
     public function shelf(){
-        return $this->belongsTo(shelf::class);
+        return $this->belongsTo(Shelf::class);
+    }
+    public function picture(){
+        return $this->belongsTo(Picture::class);
     }
     public function categories(){
         return $this->belongsToMany(Category::class);
@@ -24,6 +27,7 @@ class Book extends Model
     public function tags(){
         return $this->belongsToMany(Tag::class);
     }
+
 
     protected $fillable
         = [
@@ -34,7 +38,6 @@ class Book extends Model
             'tag',
             'reader_id',
             'date_take',
-            'picture',
-            'book_id',
+            'picture_id',
         ];
 }

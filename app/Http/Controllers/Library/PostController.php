@@ -67,12 +67,10 @@ class PostController extends BaseController
 
         if($request->hasFile('image')) {
             $filePath = $request->file('image')->store('public') ;
-            $array = [
-                'picture' => $filePath
-            ];
-            $result_path = $item
-                ->fill($array)
-                ->save();
+            $picture = $item->picture()->create([
+                'name' => $filePath,
+                ]);
+            $picture->books()->save($item);
         }
 
        if ($item){
@@ -137,16 +135,15 @@ class PostController extends BaseController
 
 
         if($request->hasFile('image')) {
-            $file = $request->file('image');
-//            $file_path = $request->file('image')->store('public') ;
-            $filePath = $request->file('image')->store('public');
-            $array = [
-                'picture' => $filePath
-            ];
-            $result_path = $item
-                ->fill($array)
-                ->save();
+            $url = $item->picture()->sole('name')->name;
+            Storage::delete($url);
+            $filePath = $request->file('image')->store('public') ;
+            $picture = $item->picture()->create([
+                'name' => $filePath,
+            ]);
+            $picture->books()->save($item);
         }
+
         if ($result) {
             return redirect()
                 ->route('books.edit', $item->id, 301)
@@ -176,7 +173,7 @@ class PostController extends BaseController
         }
         $result = $item->delete();;
 
-        $url = $item->picture;
+        $url = $item->picture()->sole('name')->name;
         Storage::delete($url);
         if ($result){
             return redirect()

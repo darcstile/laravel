@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Работа над ошибками">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Library/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Library/BaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Library/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +190,9 @@
       <workItem from="1619603776666" duration="1239000" />
       <workItem from="1619686537376" duration="10762000" />
       <workItem from="1619699982489" duration="78000" />
-      <workItem from="1619700071210" duration="500000" />
+      <workItem from="1619700071210" duration="1258000" />
+      <workItem from="1619766626140" duration="643000" />
+      <workItem from="1619771004147" duration="11145000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -463,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619699891480</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Работа над ошибками">
+      <created>1619700596650</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1619700596650</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
