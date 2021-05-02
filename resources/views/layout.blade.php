@@ -12,7 +12,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <div style="display:flex; width: 100%; justify-content: space-between">
         <div>
-		<a class="navbar-brand" href="#">Библиотека</a>
+		<a class="navbar-brand" href="{{route('books.index') }}">Библиотека</a>
         </div>
         <div>
         </div>

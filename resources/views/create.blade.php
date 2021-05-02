@@ -85,7 +85,7 @@
                         <div class="form">
                             <div style="background: #F1F1F1; border: 1px solid #CCCCCC; padding: 10px;">
                                 <h3>Изображение книги</h3>
-                                <img src="" class="picture" style="max-width: 300px;">
+                                <img src="../public/storage/nopicture.png" class="picture" style="max-width: 300px;">
                                 <input type="file" name="image" id="image">
                                 <input type="text" id="picture " value="" hidden>
                             </div>

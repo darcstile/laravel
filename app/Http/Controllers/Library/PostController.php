@@ -135,8 +135,10 @@ class PostController extends BaseController
 
 
         if($request->hasFile('image')) {
+            if ($item->picture != null) {
             $url = $item->picture()->sole('name')->name;
             Storage::delete($url);
+            }
             $filePath = $request->file('image')->store('public') ;
             $picture = $item->picture()->create([
                 'name' => $filePath,
@@ -171,10 +173,12 @@ class PostController extends BaseController
         if ($item->tags() != null) {
             $item->tags()->detach();
         }
-        $result = $item->delete();;
 
+        if ($item->picture != null) {
         $url = $item->picture()->sole('name')->name;
         Storage::delete($url);
+        }
+        $result = $item->delete();
         if ($result){
             return redirect()
                 ->route('books.index')

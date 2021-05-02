@@ -95,9 +95,16 @@
                     <div class="form">
                         <div style="background: #F1F1F1; border: 1px solid #CCCCCC; padding: 10px;">
                             <h3>Изображение книги</h3>
-                            <img src="../../../public{{$url = Storage::url($item->picture['name'])}}" class="picture" style="max-width: 300px;">
-                            <input type="file" name="image" id="image">
-                            <input type="text" name="picture" id="picture " value="{{$item->picture['id']}}" hidden>
+                            @if($item->picture != null)
+                            <img src="../../public{{$url = Storage::url($item->picture['name'])}}" class="picture" style="max-width: 300px;">
+                                <input type="file" name="image" id="image">
+                                <input type="text" name="picture" id="picture " value="{{$item->picture['id']}}" hidden>
+                            @else
+                                <img src="../../public/storage/nopicture.png" class="picture" style="max-width: 300px;">
+                                <input type="file" name="image" id="image">
+                                <input type="text" name="picture" id="picture " value="" hidden>
+                            @endif
+
                         </div>
                     </div>
                 </div>

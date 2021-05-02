@@ -48,7 +48,12 @@
                         @foreach($books as $book)
 							<tr>
 								<th scope="row">{{$book->id}}</th>
-								<td><img src="../public{{$url = Storage::url($book->picture['name'])}}" style="width: 50px;"></td>
+                                @if($book->picture != null)
+								<td><img src="public{{$url = Storage::url($book->picture['name'])}}" style="width: 50px;"></td>
+                                @else
+                                    <td><img src="public/storage/nopicture.png" class="picture" style="width: 50px;"></td>
+                                @endif
+
 								<td><a href="{{route('books.edit', $book->id) }}">{{$book->name }}</a></td>
 								<td>{{$book->author}}</a></td>
                                 <td> @foreach ($book->categories as $category)
