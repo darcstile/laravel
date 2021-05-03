@@ -73,11 +73,13 @@ class PostController extends BaseController
             $picture->books()->save($item);
         }
 
-       if ($item){
-           return redirect()->route('books.edit', [$item->id], 301)
+       if ($item) {
+           return redirect()
+               ->route('books.edit', [$item->id], 301)
                ->with(['success' => 'Успешно сохранено']);
        } else {
-           return back()->withErrors(['msg' => 'Ошибка сохранения'])
+           return back()
+               ->withErrors(['msg' => 'Ошибка сохранения'])
                ->withInput();
        }
     }

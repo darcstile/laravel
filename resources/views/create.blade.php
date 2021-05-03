@@ -33,11 +33,11 @@
                 <div class="col-md-8" style="float: left;">
                     <div class="form-group">
                         <label for="formGroupExampleInput">Имя книги:</label>
-                        <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" value="">
+                        <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" value="{{ old('name') }}">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Автор:</label>
-                        <input type="text" name="author" id="author" class="form-control" id="formGroupExampleInput2" value="">
+                        <input type="text" name="author" id="author" class="form-control" id="formGroupExampleInput2" value="{{ old('author') }}">
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Категория:</label>
