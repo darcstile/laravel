@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Book;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+    Route::get('/', function () {
+        $books = Book::all();
+        return view('home',compact('books'));
+    });
     Route::resource('books', 'App\Http\Controllers\library\PostController');
 
 //Route::get('books', 'App\Http\Controllers\PostController@index');

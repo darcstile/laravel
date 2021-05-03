@@ -130,9 +130,10 @@ class PostController extends BaseController
         $item->categories()->detach();
         $item->categories()->attach($category);
         $tag = $request->only('tag_id');
+        if ($tag['tag_id'] != null){
         $item->tags()->detach();
         $item->tags()->attach($tag);
-
+        }
 
         if($request->hasFile('image')) {
             if ($item->picture != null) {
