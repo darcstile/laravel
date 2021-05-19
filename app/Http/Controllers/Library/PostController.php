@@ -36,13 +36,11 @@ class PostController extends BaseController
     {
 
         $item = new Book();
-        $bookCategory = new BookCategory();
-        $bookTag = new BookTag();
         $shelves = Shelf::all();
         $categories = Category::all();
         $tags = Tag::all();
         $readers = Reader::all();
-        return view('create',compact('item', 'bookCategory','bookTag','shelves','categories','tags','readers'));
+        return view('create',compact('item', 'shelves','categories','tags','readers'));
     }
 
     /**
@@ -92,7 +90,7 @@ class PostController extends BaseController
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
