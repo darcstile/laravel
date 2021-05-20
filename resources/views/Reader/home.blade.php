@@ -36,6 +36,7 @@
                         <th scope="col">ФИО</th>
                         <th scope="col">Дата рождения</th>
                         <th scope="col">Дата регистрации</th>
+                        <th scope="col">Возраст (лет)</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,6 +47,7 @@
                             <td><a href="{{route('readers.edit', $reader->id) }}">{{$reader->FIO }}</a></td>
                             <td>{{$reader->date_birth}}</td>
                             <td>{{$reader->date_reg}}</td>
+                            <td>{{floor((time() - strtotime($reader->date_birth)) / 31556926)}}</td>
                         </tr>
                     @endforeach
 

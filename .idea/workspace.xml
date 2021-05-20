@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Работа над ошибками">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ReaderControllerUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ShelfControllerUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Reader/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Reader/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Reader/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Shelf/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Shelf/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Shelf/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Reader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Shelf.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Shelf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Написание контроллеров для полок и читателей">
+      <change beforePath="$PROJECT_DIR$/resources/views/Reader/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Reader/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +203,7 @@
       <workItem from="1620895742919" duration="632000" />
       <workItem from="1620913045646" duration="207000" />
       <workItem from="1621445301815" duration="2087000" />
-      <workItem from="1621494026586" duration="8277000" />
+      <workItem from="1621494026586" duration="9142000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -519,7 +506,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620047488087</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Написание контроллеров для полок и читателей">
+      <created>1621505218655</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1621505218655</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Написание контроллеров для полок и читателей">
+      <created>1621505227792</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1621505227792</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,6 +562,7 @@
     <MESSAGE value="Завершение написания тестов" />
     <MESSAGE value="Удаление мусора" />
     <MESSAGE value="Работа над ошибками" />
-    <option name="LAST_COMMIT_MESSAGE" value="Работа над ошибками" />
+    <MESSAGE value="Написание контроллеров для полок и читателей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Написание контроллеров для полок и читателей" />
   </component>
 </project>
