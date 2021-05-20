@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Book;
+use App\Models\Shelf;
+use App\Models\Reader;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,47 +15,18 @@ use App\Models\Book;
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('/', function () {
-        $books = Book::all();
-        return view('home',compact('books'));
-    });
-    Route::resource('books', 'App\Http\Controllers\library\PostController');
-
-//Route::get('books', 'App\Http\Controllers\PostController@index');
-//Route::post('books/edit', 'App\Http\Controllers\PostController@edit');
-//Route::post('books/update', 'App\Http\Controllers\PostController@update');
-
-
-//Route::get('/about', function () {
-//    return view('home');
-//});
-
-
-//
-//$books = \App\Models\Book::all();
-//$categories = \App\Models\Category::all();
-//foreach ($books as $book){
-//    echo '<b>Book</b>:<br>' .$book['name'].'<br>';
-//    echo '<b>Category:</b><br>';
-//    foreach ($book->categories as $category){
-//        echo $category['category'].'<br>';
-//
-//    }
-//    echo '--------------------------<br>';
-//}
-//echo '--------------------------<br>';
-//echo '--------------------------<br>';
-//echo '--------------------------<br>';
-//echo '--------------------------<br>';
-//$books = \App\Models\Book::all();
-//foreach ($books as $book){
-//    echo '<b>Book</b>:<br>'.$book['name'].'<br>';
-//    echo '<b>shelf:</b><br>';
-//    echo $book->shelf['shelf'];
-//
-
-
-//    foreach ($books as $book) {
-//        echo $book->shelf->shelf;
-//    }
-//}
+Route::get('/', function () {
+    $books = Book::all();
+    return view('home',compact('books'));
+});
+Route::resource('books', 'App\Http\Controllers\library\PostController');
+Route::get('shelves',function (){
+    $shelves = Shelf::all();
+    return view('shelves',compact('shelves'));
+});
+Route::resource('shelves', 'App\Http\Controllers\library\ShelfController');
+Route::get('readers',function (){
+    $readers = Reader::all();
+    return view('readers',compact('readers'));
+});
+Route::resource('readers', 'App\Http\Controllers\library\ReaderController');

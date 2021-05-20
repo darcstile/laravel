@@ -13,4 +13,10 @@ class Reader extends Model
     public function books(){
         return $this->hasOne(book::class);
     }
+    protected $fillable
+        = [
+            'FIO',
+            'date_reg',
+            'date_birth',
+        ];
 }

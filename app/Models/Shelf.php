@@ -13,4 +13,8 @@ class Shelf extends Model
     public function books(){
         return $this->hasOne(book::class);
     }
+    protected $fillable
+        = [
+            'name',
+        ];
 }

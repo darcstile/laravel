@@ -13,6 +13,8 @@
         <div style="display:flex; width: 100%; justify-content: space-between">
         <div>
 		<a class="navbar-brand" href="{{route('books.index') }}">Библиотека</a>
+		<a class="navbar-brand" href="{{route('shelves.index') }}">Полки</a>
+		<a class="navbar-brand" href="{{route('readers.index') }}">Читатели</a>
         </div>
         <div>
         </div>

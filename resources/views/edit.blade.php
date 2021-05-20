@@ -35,7 +35,6 @@
             <div class="form-group">
                 <label for="formGroupExampleInput">Имя книги:</label>
                 <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" value="{{$item->name}}">
-                <input type="text" name="book_id" id="book_id" class="form-control" id="formGroupExampleInput" value="{{$item->id}}" hidden>
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Автор:</label>
