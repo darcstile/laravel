@@ -55,7 +55,7 @@
                                 @endif
 
 								<td><a href="{{route('books.edit', $book->id) }}">{{$book->name }}</a></td>
-								<td>{{$book->author}}</a></td>
+								<td>{{$book->author}}</td>
                                 <td> @foreach ($book->categories as $category)
                                         {{ $category->name }}
                                     @endforeach</td>

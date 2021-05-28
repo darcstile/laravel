@@ -15,6 +15,7 @@
 		<a class="navbar-brand" href="{{route('books.index') }}">Библиотека</a>
 		<a class="navbar-brand" href="{{route('shelves.index') }}">Полки</a>
 		<a class="navbar-brand" href="{{route('readers.index') }}">Читатели</a>
+		<a class="navbar-brand" href="{{route('journal.index') }}">Журнал чтения</a>
         </div>
         <div>
         </div>

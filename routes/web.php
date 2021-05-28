@@ -20,13 +20,18 @@ Route::get('/', function () {
     return view('home',compact('books'));
 });
 Route::resource('books', 'App\Http\Controllers\library\PostController');
-Route::get('shelves',function (){
-    $shelves = Shelf::all();
-    return view('shelves',compact('shelves'));
-});
+//Route::get('shelves',function (){
+//    $shelves = Shelf::all();
+//    return view('shelves',compact('shelves'));
+//});
 Route::resource('shelves', 'App\Http\Controllers\library\ShelfController');
-Route::get('readers',function (){
-    $readers = Reader::all();
-    return view('readers',compact('readers'));
-});
+//Route::get('readers',function (){
+//    $readers = Reader::all();
+//    return view('readers',compact('readers'));
+//});
 Route::resource('readers', 'App\Http\Controllers\library\ReaderController');
+//Route::get('journal',function (){
+//    $readers = Reader::all();
+//    return view('readers',compact('readers'));
+//});
+Route::resource('journal', 'App\Http\Controllers\library\JournalController');
