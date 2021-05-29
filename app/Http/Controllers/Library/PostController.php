@@ -34,13 +34,11 @@ class PostController extends BaseController
      */
     public function create()
     {
-
         $item = new Book();
         $shelves = Shelf::all();
         $categories = Category::all();
         $tags = Tag::all();
-        $readers = Reader::all();
-        return view('create',compact('item', 'shelves','categories','tags','readers'));
+        return view('create',compact('item', 'shelves','categories','tags'));
     }
 
     /**
@@ -105,8 +103,7 @@ class PostController extends BaseController
         $shelves = Shelf::all();
         $categories = Category::all();
         $tags = Tag::all();
-        $readers = Reader::all();
-        return view('edit',compact('item', 'shelves','categories','tags','readers'));
+        return view('edit',compact('item', 'shelves','categories','tags'));
     }
 
 
@@ -124,7 +121,7 @@ class PostController extends BaseController
             return back()
                 ->withErrors(['msg' => "Запись id=[{$id}] не найдена"]);
         }
-        $data = $request->only('name','author','date_take','shelf_id','reader_id');
+        $data = $request->only('name','author','shelf_id');
         $result = $item->update($data);
         $category =  $request->only('category_id');
         $item->categories()->detach();

@@ -75,19 +75,6 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput2">Читатель:</label>
-                <select class="custom-select" name="reader_id" id="reader_id">
-                    <option selected value="{{$item->reader['id']}}">{{$item->reader['FIO']}}</option>
-                    @foreach ($readers as $reader)
-                        <option value="{{ $reader->id }}">{{ $reader->FIO }}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput2">Дата взятия:</label>
-                <input type="date" name="date_take" id="date_take" class="form-control" id="formGroupExampleInput2" value="{{$item->date_take}}">
-            </div>
         </div>
             <div class="col-md-4" style="float: right;">
             <div class="form-group">

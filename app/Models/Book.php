@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Book extends Model
 {
@@ -12,22 +11,27 @@ class Book extends Model
 
     use HasFactory;
 
-    public function reader(){
-        return $this->belongsTo(Reader::class);
-    }
-    public function shelf(){
+
+    public function shelf()
+    {
         return $this->belongsTo(Shelf::class);
     }
-    public function picture(){
+    public function picture()
+    {
         return $this->belongsTo(Picture::class);
     }
-    public function categories(){
+    public function categories()
+    {
         return $this->belongsToMany(Category::class);
     }
-    public function tags(){
+    public function tags()
+    {
         return $this->belongsToMany(Tag::class);
     }
-
+    public function journal()
+    {
+        return $this->hasOne(Journal::class);
+    }
 
     protected $fillable
         = [

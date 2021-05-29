@@ -39,8 +39,7 @@
 								<th scope="col">Категория</th>
 								<th scope="col">Метка или тег</th>
 								<th scope="col">Полка</th>
-								<th scope="col">Читатель</th>
-								<th scope="col">Дата взятия книги</th>
+								<th scope="col">Наличие книги</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -63,8 +62,17 @@
                                     {{ $tag->name }}
                                     @endforeach</td>
 								<td>{{$book->shelf['name']}}</td>
-								<td>{{$book->reader['FIO']}}</td>
-								<td>{{$book->date_take}}</td>
+								<td>
+                                    @if(isset($book->journal['status']))
+                                        {{$book->journal['status']}}
+                                        @if($book->journal['status'] == "У читателя")
+                                            <br>
+                                            <span>Вернется: <br> {{$book->journal['date_return']}}</span>
+                                        @endif
+                                    @else
+                                        <span>В наличии</span>
+                                    @endif
+                                </td>
 							</tr>
                         @endforeach
 

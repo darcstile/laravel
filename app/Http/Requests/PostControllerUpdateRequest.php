@@ -30,8 +30,6 @@ class PostControllerUpdateRequest extends FormRequest
             'category_id' => 'required|integer|exists:categories,id',
             'shelf_id' => 'required|integer|exists:shelves,id',
             'tag_id' => 'integer|exists:tags,id|nullable',
-            'reader_id' => 'integer|exists:readers,id|nullable',
-            'date_take' => 'date|nullable',
             'image' => 'image|mimetypes:image/jpeg,image/png',
         ];
     }
