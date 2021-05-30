@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Написание контроллеров для полок и читателей">
-      <change afterPath="$PROJECT_DIR$/resources/views/Journal/create.blade.php" afterDir="false" />
+    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Создание журнала чтения">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Library/JournalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Library/JournalController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Library/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Library/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/PostControllerUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PostControllerUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Journal/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Journal/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +213,8 @@
       <workItem from="1621576151989" duration="212000" />
       <workItem from="1621576385972" duration="19785000" />
       <workItem from="1622217213633" duration="1375000" />
-      <workItem from="1622277032603" duration="12437000" />
+      <workItem from="1622277032603" duration="13028000" />
+      <workItem from="1622381432399" duration="6272000" />
     </task>
     <task id="LOCAL-00001" summary="Создание миграций для БД">
       <created>1618894770759</created>
@@ -550,7 +545,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622218580235</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Создание журнала чтения">
+      <created>1622292280289</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1622292280290</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Создание журнала чтения">
+      <created>1622292291711</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1622292291711</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,6 +602,7 @@
     <MESSAGE value="Удаление мусора" />
     <MESSAGE value="Работа над ошибками" />
     <MESSAGE value="Написание контроллеров для полок и читателей" />
-    <option name="LAST_COMMIT_MESSAGE" value="Написание контроллеров для полок и читателей" />
+    <MESSAGE value="Создание журнала чтения" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создание журнала чтения" />
   </component>
 </project>

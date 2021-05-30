@@ -29,7 +29,7 @@ class PostControllerUpdateRequest extends FormRequest
             'author' => 'string|max:200|nullable',
             'category_id' => 'required|integer|exists:categories,id',
             'shelf_id' => 'required|integer|exists:shelves,id',
-            'tag_id' => 'integer|exists:tags,id|nullable',
+            'tag_id' => 'string|nullable',
             'image' => 'image|mimetypes:image/jpeg,image/png',
         ];
     }

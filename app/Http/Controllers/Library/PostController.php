@@ -52,23 +52,29 @@ class PostController extends BaseController
        $data = $request->all();
        $item = new Book($data);
        $item->save();
-       $category =  $request->input('category_id');
-        if ($category != null) {
-            $item->categories()->attach($category);
-        }
-       $tag = $request->input('tag_id');
-       if ($tag != null) {
-            $item->tags()->attach($tag);
+       $tagData = $request->input('tag_id');
+       $tag = Tag::where('name', $tagData)->first();
+       if (!$tag) {
+           $tagData = [
+               'name' => $tagData,
+               ];
+           $tagSave = new Tag($tagData);
+           $tagSave->save();
+           $item->tags()->attach($tagSave);
+       } else {
+           $item->tags()->attach($tag['id']);
        }
-
-        if($request->hasFile('image')) {
-            $filePath = $request->file('image')->store('public') ;
-            $picture = $item->picture()->create([
-                'name' => $filePath,
-                ]);
-            $picture->books()->save($item);
-        }
-
+       $category =  $request->input('category_id');
+       if ($category != null) {
+           $item->categories()->attach($category);
+       }
+       if($request->hasFile('image')) {
+           $filePath = $request->file('image')->store('public') ;
+           $picture = $item->picture()->create([
+               'name' => $filePath,
+               ]);
+           $picture->books()->save($item);
+       }
        if ($item) {
            return redirect()
                ->route('books.edit', [$item->id], 301)
@@ -126,12 +132,20 @@ class PostController extends BaseController
         $category =  $request->only('category_id');
         $item->categories()->detach();
         $item->categories()->attach($category);
-        $tag = $request->only('tag_id');
-        if ($tag['tag_id'] != null){
-        $item->tags()->detach();
-        $item->tags()->attach($tag);
+        $tagData = $request->input('tag_id');
+        $tag = Tag::where('name', $tagData)->first();
+        if (!$tag) {
+            $tagData = [
+                'name' => $tagData,
+            ];
+            $tagSave = new Tag($tagData);
+            $tagSave->save();
+            $item->tags()->detach();
+            $item->tags()->attach($tagSave);
+        } else {
+            $item->tags()->detach();
+            $item->tags()->attach($tag['id']);
         }
-
         if($request->hasFile('image')) {
             if ($item->picture != null) {
             $url = $item->picture()->sole('name')->name;
@@ -143,12 +157,10 @@ class PostController extends BaseController
             ]);
             $picture->books()->save($item);
         }
-
         if ($result) {
             return redirect()
                 ->route('books.edit', $item->id, 301)
                 ->with(['success' => 'Успешно сохранено']);
-
         } else {
             return back()
                 ->withErrors(['msg'=> 'Ошибка сохранения']);
@@ -171,7 +183,6 @@ class PostController extends BaseController
         if ($item->tags() != null) {
             $item->tags()->detach();
         }
-
         if ($item->picture != null) {
         $url = $item->picture()->sole('name')->name;
         Storage::delete($url);

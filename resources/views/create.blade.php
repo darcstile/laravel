@@ -59,12 +59,13 @@
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput2">Метка:</label>
-                        <select class="custom-select" name="tag_id" id="tag_id">
+                        <input list="tags" name="tag_id" id="tag_id" class="form-control"/>
+                        <datalist id="tags">
                             <option selected value=""></option>
                             @foreach ($tags as $tag)
-                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                <option value="{{ $tag->name }}" ></option>
                             @endforeach
-                        </select>
+                        </datalist>
                     </div>
                 </div>
                 <div class="col-md-4" style="float: right;">
