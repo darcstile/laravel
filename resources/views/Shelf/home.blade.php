@@ -44,8 +44,6 @@
                             <td><a href="{{route('shelves.edit', $shelf->id) }}">{{$shelf->name }}</a></td>
                         </tr>
                     @endforeach
-
-
                     </tbody>
                 </table>
 

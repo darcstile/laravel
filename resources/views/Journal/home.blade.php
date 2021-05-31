@@ -39,7 +39,6 @@
                         <th scope="col">Статус</th>
                         <th scope="col">Удалить запись</th>
                         <th scope="col">Действие</th>
-
                     </tr>
                     </thead>
                     <tbody>
@@ -73,11 +72,8 @@
 
                         </tr>
                     @endforeach
-
-
                     </tbody>
                 </table>
-
             </div><!-- ./table-responsive-->
         </div>
     @endif

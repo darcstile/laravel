@@ -50,11 +50,8 @@
                             <td>{{floor((time() - strtotime($reader->date_birth)) / 31556926)}}</td>
                         </tr>
                     @endforeach
-
-
                     </tbody>
                 </table>
-
             </div><!-- ./table-responsive-->
         </div>
     @endif

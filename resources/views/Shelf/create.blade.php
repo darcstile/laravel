@@ -35,8 +35,6 @@
                         <label for="formGroupExampleInput">Имя полки:</label>
                         <input type="text" name="name" id="name" class="form-control" id="formGroupExampleInput" value="{{ old('name') }}">
                     </div>
-
-
                     </div>
                 </div>
             <input type="submit" class="btn btn-save btn-primary" value="Сохранить" style="margin-top: 10px; float: left">

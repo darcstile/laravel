@@ -75,11 +75,8 @@
                                 </td>
 							</tr>
                         @endforeach
-
-
 						</tbody>
 					</table>
-
 				</div><!-- ./table-responsive-->
     </div>
     @endif
