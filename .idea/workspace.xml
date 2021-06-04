@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Создание новой метки" />
+    <list default="true" id="9c643e3c-9dc7-4644-a44a-7dd24fdc8ea9" name="Default Changelist" comment="Удаление мусора" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,13 +208,7 @@
       <workItem from="1622217213633" duration="1375000" />
       <workItem from="1622277032603" duration="13028000" />
       <workItem from="1622381432399" duration="6430000" />
-    </task>
-    <task id="LOCAL-00002" summary="Создание таблиц book, reader, shelf">
-      <created>1618896594149</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1618896594149</updated>
+      <workItem from="1622470423024" duration="236000" />
     </task>
     <task id="LOCAL-00003" summary="Заполнение таблиц reader, shelf">
       <created>1618899270412</created>
@@ -552,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622388175114</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Удаление мусора">
+      <created>1622470648038</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1622470648038</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,11 +592,11 @@
     <MESSAGE value="Начало работы с тестами" />
     <MESSAGE value="Написание тестов" />
     <MESSAGE value="Завершение написания тестов" />
-    <MESSAGE value="Удаление мусора" />
     <MESSAGE value="Работа над ошибками" />
     <MESSAGE value="Написание контроллеров для полок и читателей" />
     <MESSAGE value="Создание журнала чтения" />
     <MESSAGE value="Создание новой метки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создание новой метки" />
+    <MESSAGE value="Удаление мусора" />
+    <option name="LAST_COMMIT_MESSAGE" value="Удаление мусора" />
   </component>
 </project>

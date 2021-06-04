@@ -52,15 +52,15 @@ class PostController extends BaseController
        $data = $request->all();
        $item = new Book($data);
        $item->save();
-       $tagData = $request->input('tag_id');
-       $tag = Tag::where('name', $tagData)->first();
+       $tag_data = $request->input('tag_id');
+       $tag = Tag::where('name', $tag_data)->first();
        if (!$tag) {
-           $tagData = [
-               'name' => $tagData,
+           $tag_data = [
+               'name' => $tag_data,
                ];
-           $tagSave = new Tag($tagData);
-           $tagSave->save();
-           $item->tags()->attach($tagSave);
+           $tag_save = new Tag($tag_data);
+           $tag_save->save();
+           $item->tags()->attach($tag_save);
        } else {
            $item->tags()->attach($tag['id']);
        }
@@ -69,9 +69,9 @@ class PostController extends BaseController
            $item->categories()->attach($category);
        }
        if($request->hasFile('image')) {
-           $filePath = $request->file('image')->store('public') ;
+           $file_path = $request->file('image')->store('public') ;
            $picture = $item->picture()->create([
-               'name' => $filePath,
+               'name' => $file_path,
                ]);
            $picture->books()->save($item);
        }
@@ -132,16 +132,16 @@ class PostController extends BaseController
         $category =  $request->only('category_id');
         $item->categories()->detach();
         $item->categories()->attach($category);
-        $tagData = $request->input('tag_id');
-        $tag = Tag::where('name', $tagData)->first();
+        $tag_data = $request->input('tag_id');
+        $tag = Tag::where('name', $tag_data)->first();
         if (!$tag) {
-            $tagData = [
-                'name' => $tagData,
+            $tag_data = [
+                'name' => $tag_data,
             ];
-            $tagSave = new Tag($tagData);
-            $tagSave->save();
+            $tag_save = new Tag($tag_data);
+            $tag_save->save();
             $item->tags()->detach();
-            $item->tags()->attach($tagSave);
+            $item->tags()->attach($tag_save);
         } else {
             $item->tags()->detach();
             $item->tags()->attach($tag['id']);
@@ -151,9 +151,9 @@ class PostController extends BaseController
             $url = $item->picture()->sole('name')->name;
             Storage::delete($url);
             }
-            $filePath = $request->file('image')->store('public') ;
+            $file_path = $request->file('image')->store('public') ;
             $picture = $item->picture()->create([
-                'name' => $filePath,
+                'name' => $file_path,
             ]);
             $picture->books()->save($item);
         }
