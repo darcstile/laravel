@@ -1,8 +1,9 @@
 @extends('layout')
 
 @section('content')
-    @if(count($shelves)!=0)
         <div class="container">
+             <a href="{{route('shelves.create') }}" class="btn btn-primary"  style="margin-bottom: 10px; float: right">Новая полка</a>
+              @if(count($shelves)!=0)
             @if($errors->any())
                 <div class="row justify-content-center">
                     <div class="col-md-11">
@@ -27,7 +28,6 @@
                     </div>
                 </div>
             @endif
-            <a href="{{route('shelves.create') }}" class="btn btn-primary"  style="margin-bottom: 10px; float: right">Новая полка</a>
             <div class="table-responsive">
                 <table class="table table-hover table-striped">
                     <thead>
